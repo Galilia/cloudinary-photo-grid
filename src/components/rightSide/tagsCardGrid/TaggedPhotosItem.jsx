@@ -1,3 +1,4 @@
+import "./TaggedPhotosItem.scss";
 
 const TaggedPhotosItem = ({tag}) => {
 

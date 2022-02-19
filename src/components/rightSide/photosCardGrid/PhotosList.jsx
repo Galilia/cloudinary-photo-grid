@@ -1,4 +1,4 @@
-import {PhotosItem} from "./photoItem";
+import {PhotosItem} from "./PhotoItem";
 import {useContext} from "react";
 import {TagContext} from "../../../context/context";
 

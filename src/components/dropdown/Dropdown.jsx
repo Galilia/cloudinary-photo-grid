@@ -1,3 +1,4 @@
+import './Dropdown.scss';
 
 const Dropdown = ({tag, img, assignTagToPhoto}) => {
   const {imgId, imgUrl} = img;
@@ -6,7 +7,7 @@ const Dropdown = ({tag, img, assignTagToPhoto}) => {
   return (
     <button
       type="button"
-      className="dropdown-button-list-item"
+      className="dropdown-button-list-item btn-pointer"
       style={{ backgroundColor: `#${tag.color}` }}
       onClick={() => assignTagToPhoto({imgId, imgUrl, id})}
     >

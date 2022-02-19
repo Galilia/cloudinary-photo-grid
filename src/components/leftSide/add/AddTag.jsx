@@ -1,12 +1,27 @@
 import {useContext, useState} from "react";
 import {TagContext} from "../../../context/context";
+import './AddTag.scss';
+import {Announce} from "../../announce/Announce";
 
 const AddTag = () => {
   const [inputValue, setInputValue] = useState('');
-  const {addTag} = useContext(TagContext);
+  const {tags = [] ,addTag} = useContext(TagContext);
+  const headerExists = tags.some(i => (i.id === inputValue));
+
+  const addTagHandler = () => {
+    if (inputValue === '' || headerExists) {
+      return
+    }
+
+    addTag(inputValue);
+  }
 
   return (
     <div className="add-tag">
+      <div className="add-tag-error-info">
+        {(inputValue === "") && <Announce text="Input is empty"/> }
+        {headerExists && <Announce text="Name already exist"/> }
+      </div>
       <input
         id="tag_name"
         placeholder="add tag name"
@@ -15,7 +30,7 @@ const AddTag = () => {
           setInputValue(event.target.value)
         }}
       />
-      <button className="btn" onClick={() => addTag(inputValue)}>Add Tag</button>
+      <button className="btn" onClick={addTagHandler}>Add Tag</button>
     </div>
   )
 }

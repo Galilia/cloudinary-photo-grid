@@ -12,6 +12,27 @@ code {
     monospace;
 }
 
-.grid-page {
 
+.btn-pointer {
+  cursor: pointer;
 }
+
+.photos-list,.tagged-photos {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  border: 0.5px solid red;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+

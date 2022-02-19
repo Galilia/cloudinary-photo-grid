@@ -1,5 +1,6 @@
-import {AddTag} from "./add/addTag";
-import {TagList} from "./tagList/tagList";
+import {AddTag} from "./add/AddTag";
+import {TagList} from "./tagList/TagList";
+import './TagsManager.scss';
 
 const TagsManager = () => {
 

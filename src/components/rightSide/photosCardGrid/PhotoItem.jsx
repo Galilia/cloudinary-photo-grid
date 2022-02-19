@@ -1,6 +1,8 @@
-import {Dropdown} from "../../dropdown/dropdown";
+import {Dropdown} from "../../dropdown/Dropdown";
 import {useContext, useState} from "react";
 import {TagContext} from "../../../context/context";
+import "./PhotoItem.scss";
+import {Announce} from "../../announce/Announce";
 
 const PhotosItem = ({img}) => {
   const {tags = []} = useContext(TagContext);
@@ -20,16 +22,14 @@ const PhotosItem = ({img}) => {
           <span className="card-title grey-text text-darken-4">Photo {img.imgId}
             <button className="material-icons btn right" onClick={toggleList}>more_vert</button>
             {isListOpen &&
-              <div role="list" className="dropdown-list">
+              <div role="list" className="photo-item-dropdown-list">
                 {
-                  tags.length === 0 ? <h6>There is no tags</h6> :
+                  tags.length ?
                     <>
                       {tags.map((tag, index) => <Dropdown key={index} tag={tag} img={img} assignTagToPhoto={assignTagToPhoto}/>)}
-                    </>
+                    </> : <Announce text="There are no tags"/>
                 }
               </div>
-
-
             }
           </span>
         </div>

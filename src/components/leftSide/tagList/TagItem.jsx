@@ -8,7 +8,7 @@ const TagItem = ({tag}) => {
     <ul className="collection with-header">
       <li className="collection-item" style={{ backgroundColor: `#${tag.color}`}}>
         <div>Tag {tag.header}
-          <div className="secondary-content tagItem-btn">
+          <div className="secondary-content btn-pointer">
             <i className="material-icons" onClick={() => removeTag(tag.id)}>delete</i>
           </div>
         </div>
