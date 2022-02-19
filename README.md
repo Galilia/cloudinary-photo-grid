@@ -2,4 +2,4 @@
 
 Cloudinary photos grid interview task:
 
-![gridpage.png](gridpage.png)
+![img.png](img.png)
