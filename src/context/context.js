@@ -27,6 +27,10 @@ export const ContextProvider = ({children}) => {
     dispatch({type: 'ASSIGN_TAG_TO_PHOTO', payload: item})
   }
 
+  value.untagPhoto = (item) => {
+    dispatch({type: 'UNTAG_PHOTO', payload: item})
+  }
+
 
   return <TagContext.Provider value={value}>{children}</TagContext.Provider>
 }

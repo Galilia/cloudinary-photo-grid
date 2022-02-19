@@ -44,6 +44,22 @@ const Reducer = (state, {type, payload}) => {
         })
       }
 
+    case 'UNTAG_PHOTO':
+      return {
+        ...state,
+        tags: state.tags.map( el => {
+          if (el.id === payload.id) {
+            const photos = el.photo.filter(i => (i.imgId !== payload.imgId))
+            return {
+              ...el,
+              photo: [...photos]
+            }
+          } else {
+            return el;
+          }
+        })
+      }
+
     default:
       return state;
   }
