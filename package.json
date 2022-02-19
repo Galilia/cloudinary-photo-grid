@@ -1,6 +1,6 @@
 {
   "name": "cloudinary-photos-grid",
-  "homepage": "https://galilia.github.io/cloudinary-photos-grid",
+  "homepage": "https://galilia.github.io/cloudinary-photo-grid",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
